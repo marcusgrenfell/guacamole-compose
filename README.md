@@ -1,10 +1,10 @@
 # Easy guacamole / docker stack
-## _A easy Linux VDI using docker/compose_
+## _Easy Linux VDI using docker/compose_
 
 ![](https://s3.gifyu.com/images/pronto.gif)
 
 ## Requeriments:
-Docker / docker-compose
+Docker / docker-compose<br />
 git (to clone repo)
 
 
