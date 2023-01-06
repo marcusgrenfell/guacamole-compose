@@ -1,0 +1,20 @@
+<user-mapping>
+    <authorize
+            username="USERNAME"
+            password="PASSWORD"
+            encoding="md5">
+
+
+        <connection name="rdp">
+            <protocol>rdp</protocol>
+            <param name="hostname">rdp</param>
+            <param name="port">3389</param>
+	    <param name="username">guacauser</param>
+	    <param name="password">marcusgrenfell123</param>
+	    <param name="ignore-cert">true</param>
+        </connection>
+
+    </authorize>
+
+</user-mapping>
+

@@ -1,0 +1,48 @@
+version: '3.3'
+
+
+# Networkname
+networks:
+  grenfell:
+    driver: bridge
+
+
+# service Declaration
+# Change environment variables 
+# USERNAME  = username to login in guacamole
+# PASSWORD = pass to login in guacamole
+services:
+  guacamole:
+    environment:
+     USERNAME: marcus
+     PASSWORD: grenfell
+    container_name: guacamole
+    depends_on:
+    - guacd
+    - rdp
+    build: guacamole/.
+    links:
+    - guacd
+    - rdp
+    networks:
+      grenfell:
+    ports:
+      - 80:8080/tcp
+    restart: always
+  rdp:
+    container_name: rdp
+    privileged: true
+    build: rdp/.
+    restart: always 
+    networks:
+      grenfell:
+        #    Uncomment if need direct access to RDP server 
+        #    ports:
+        #      - 3389:3389/tcp
+
+  guacd:
+    container_name: guacd
+    image: guacamole/guacd
+    networks:
+      grenfell:
+    restart: always
